@@ -1,0 +1,16 @@
+# Visual Studio
+.vs/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build files
+bin/
+obj/
+
+# Secrets
+appsettings.Development.json
+appsettings.Production.json
+secrets.json

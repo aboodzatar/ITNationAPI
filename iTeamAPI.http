@@ -1,0 +1,6 @@
+@iTeamAPI_HostAddress = http://localhost:5008
+
+GET {{iTeamAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
