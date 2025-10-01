@@ -102,13 +102,11 @@ var app = builder.Build();
 // Then in the pipeline (replace the old UseCors lines):
 app.UseCors("AllowFrontend");
 
-if (app.Environment.IsDevelopment())
+// Run seeder in ALL environments (it's safe — it checks before creating)
+using (var scope = app.Services.CreateScope())
 {
-    using (var scope = app.Services.CreateScope())
-    {
-        var services = scope.ServiceProvider;
-        await DbSeeder.Seed(services);
-    }
+    var services = scope.ServiceProvider;
+    await DbSeeder.Seed(services);
 }
 
 app.UseIpRateLimiting();
